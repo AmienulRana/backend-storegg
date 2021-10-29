@@ -1,0 +1,21 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Nama</th>
+    <th>Aksi</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% category.forEach((category, i) => { %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= category.nama %></td>
+        <td class="d-flex">
+          <a href="/category/edit/<%=category._id %>" class="btn-warning btn mr-3">Edit</a>
+          <a href="/category/delete/<%=category._id %>" class="btn-danger btn">Delete</a>
+        </td>
+      </tr>
+    <%}) %>
+  </tbody>
+</table>

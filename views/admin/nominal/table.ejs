@@ -1,0 +1,25 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Nama koin</th>
+    <th>jumlah koin</th>
+    <th>harga koin</th>
+    <th>Aksi</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% nominal.forEach((nom, i) => { %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= nom.coinName %></td>
+        <td><%= nom.coinQuantity %></td>
+        <td><%= nom.harga %></td>
+        <td class="d-flex">
+          <a href="/nominal/edit/<%=nom._id %>" class="btn-warning btn mr-3">Edit</a>
+          <a href="/nominal/delete/<%=nom._id %>?_method=DELETE" class="btn-danger btn">Delete</a>
+        </td>
+      </tr>
+    <%}) %>
+  </tbody>
+</table>

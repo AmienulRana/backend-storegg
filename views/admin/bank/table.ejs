@@ -1,0 +1,25 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Nama Pemilik</th>
+    <th>Nama Bank</th>
+    <th>Nomor rekening</th>
+    <th>Aksi</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% bank.forEach((bank, i) => { %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= bank.namaPemilik %></td>
+        <td><%= bank.namaBank %></td>
+        <td><%= bank.noRekening %></td>
+        <td class="d-flex">
+          <a href="/bank/edit/<%=bank._id %>" class="btn-warning btn mr-3">Edit</a>
+          <a href="/bank/delete/<%=bank._id %>" class="btn-danger btn">Delete</a>
+        </td>
+      </tr>
+    <%}) %>
+  </tbody>
+</table>
